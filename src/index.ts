@@ -18,7 +18,7 @@ client.on('ready', async client => {
 	} catch (error) {
 		Logging.error(`Error while loading modules: ${error}`);
 	}
-	Logging.info(`Client ready! Singed in as ${client.user.tag}!`);
+	Logging.info(`Client ready! Signed in as ${client.user.tag}!`);
 })
 
 client.login(getEnv('DISCORD_TOKEN'));
