@@ -19,7 +19,7 @@ export default class ServerLoggerEvents {
 			const embed = new EmbedBuilder()
 				.setColor(ColorEnum.Red)
 				.setTitle('Bericht verwijderd!')
-				.setDescription(`Door: <@${message.author?.id}> | Kanaal: <#${message.channel.id}>.`)
+				.setDescription(`Van: <@${message.author?.id}> | Kanaal: <#${message.channel.id}>.`)
 				.addFields({ name: 'Content', value: message.content ?? 'Niet gevonden...' });
 			
 			await this.logChannel.send({ embeds: [embed] });
@@ -29,7 +29,7 @@ export default class ServerLoggerEvents {
 			const embed = new EmbedBuilder()
 				.setColor(ColorEnum.Orange)
 				.setTitle('Bericht aangepast!')
-				.setDescription(`Door: <@${newMessage.author?.id}> | Kanaal: <#${newMessage.channel.id}>.`)
+				.setDescription(`Van: <@${newMessage.author?.id}> | Kanaal: <#${newMessage.channel.id}>.`)
 				.addFields(
 					{name: 'Voor', value: oldMessage.content ?? 'Niet gevonden'},
 					{name: 'Na', value: newMessage.content ?? 'Niet gevonden'}
