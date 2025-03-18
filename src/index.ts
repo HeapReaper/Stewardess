@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits } from 'discord.js';
+import { Client, GatewayIntentBits, ActivityType } from 'discord.js';
 import loadModules from '@helpers/moduleLoader';
 import { Logging } from '@helpers/logging';
 import { getEnv } from '@helpers/env';
@@ -18,6 +18,9 @@ client.on('ready', async client => {
 	} catch (error) {
 		Logging.error(`Error while loading modules: ${error}`);
 	}
+	
+	client?.user.setActivity('Wilt u koffie of thee?', {type: ActivityType.Listening})
+	
 	Logging.info(`Client ready! Signed in as ${client.user.tag}!`);
 })
 
