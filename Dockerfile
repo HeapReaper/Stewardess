@@ -6,6 +6,6 @@ COPY . .
 
 RUN bun install
 
-RUN cd /src
+WORKDIR /app/src
 
 CMD ["bun", "run", "index.ts"]
