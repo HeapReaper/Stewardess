@@ -63,7 +63,6 @@ export class Logging {
 		}
 	}
 
-
 	/**
 	 * Logs debug messages to the terminal.
 	 * It display the error message only if environment is set to 'debug'.
