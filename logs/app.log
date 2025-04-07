@@ -3,3 +3,9 @@
 [07-04-2025 09:17:17] [ERROR] Error reading modules directory: ../modules: ENOENT: no such file or directory, scandir '../modules'
 [07-04-2025 09:17:39] [ERROR] Error while loading modules: TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" property must be of type string, got undefined
 [07-04-2025 09:17:47] [ERROR] Error while loading modules: TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" property must be of type string, got undefined
+[07-04-2025 09:22:18] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
+[07-04-2025 09:22:34] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
+[07-04-2025 09:22:45] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
+[07-04-2025 09:26:28] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
+[07-04-2025 09:26:30] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
+[07-04-2025 09:26:57] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
