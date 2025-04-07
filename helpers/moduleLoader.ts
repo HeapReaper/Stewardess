@@ -4,7 +4,7 @@ import { pathToFileURL } from 'url';
 import { Logging } from '@helpers/logging.ts';
 
 async function loadModules(client: any) {
-	const modulesPath = path.join('../', 'modules');
+	const modulesPath = path.join('./', 'modules');
 	
 	try {
 		const moduleFolders = await fs.readdir(modulesPath);
