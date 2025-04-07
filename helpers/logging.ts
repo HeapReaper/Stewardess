@@ -1,5 +1,3 @@
-// helpers/logging.js
-
 import { getEnv } from '@helpers/env.ts';
 
 export class Logging {
