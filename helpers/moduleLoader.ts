@@ -2,9 +2,11 @@ import fs from 'fs/promises';
 import path from 'path';
 import { pathToFileURL } from 'url';
 import { Logging } from '@helpers/logging.ts';
+import * as process from "node:process";
+import { getEnv } from '@helpers/env.ts';
 
 async function loadModules(client: any) {
-	const modulesPath = path.join('./', 'modules');
+	const modulesPath = path.join(<string>getEnv('MODULES_BASE_PATH'), 'modules');
 	
 	try {
 		const moduleFolders = await fs.readdir(modulesPath);
