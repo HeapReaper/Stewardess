@@ -1,4 +1,5 @@
 import { getEnv } from '@helpers/env.ts';
+import chalk from 'chalk';
 
 export class Logging {
 	/**
@@ -8,7 +9,9 @@ export class Logging {
 	 * @returns void - Returns nothing.
 	 */
 	static info(message: string): void {
-		console.log(`INFO: ${message}`);
+		const now = new Date();
+
+		console.log(`[${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')}] [${chalk.green('INFO')}]  ${message}`);
 	}
 	
 	/**
@@ -18,7 +21,9 @@ export class Logging {
 	 * @returns void - Returns nothing.
 	 */
 	static warn(message: string): void {
-		console.warn(`WARNING: ${message}`);
+		const now = new Date();
+
+		console.log(`[${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')}] [${chalk.yellow('WARN')}]  ${message}`);
 	}
 	
 	/**
@@ -28,8 +33,9 @@ export class Logging {
 	 * @returns void - Returns nothing.
 	 */
 	static error(message: string): void {
-		console.error(`ERROR: ${message}`);
-	}
+		const now = new Date();
+
+		console.log(`[${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')}] [${chalk.red('ERROR')}] ${message}`);	}
 	
 	/**
 	 * Logs debug messages to the terminal.
@@ -40,7 +46,7 @@ export class Logging {
 	 */
 	static debug(message: string): void {
 		if (getEnv('ENVIRONMENT') !== 'debug') return;
-		
-		console.debug(`DEBUG: ${message}`);
-	}
+		const now = new Date();
+
+		console.log(`[${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth() + 1).padStart(2, '0')}-${now.getFullYear()} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')}] [${chalk.blue('DEBUG')}] ${message}`);	}
 }
