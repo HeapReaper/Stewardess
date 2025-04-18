@@ -1,2 +1,2 @@
 # Stewardess
-The new bot
+The new Discord bot
