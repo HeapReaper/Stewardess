@@ -1,4 +1,4 @@
-import { getEnv } from '@helpers/env.ts';
+import { getEnv } from './env.ts';
 import chalk from 'chalk';
 import { appendFileSync } from 'fs';
 

@@ -1,5 +1,4 @@
 import { mkdirSync, existsSync, writeFileSync } from 'fs';
-import { join } from 'path';
 import * as process from 'node:process';
 
 if (process.argv.slice(2).length == 0) {
@@ -7,7 +6,7 @@ if (process.argv.slice(2).length == 0) {
     process.exit();
 }
 
-const modulesDir = './modules';
+const modulesDir = `./modules`;
 const moduleNameToCreate = process.argv.slice(2)[0];
 
 console.log(`Making module named ${moduleNameToCreate} inside ${modulesDir}/`);
@@ -30,8 +29,8 @@ export const commands = [
 
 const commandsListenerFileWrite =
     `import { Client, Interaction, Events, MessageFlags} from 'discord.js';
-import Database from '@helpers/database';
-import { Logging } from '@helpers/logging';
+import Database from '@utils/database';
+import { Logging } from '@utils/logging';
 
 export default class CommandsListener {
 	private client: Client;

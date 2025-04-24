@@ -1,6 +1,6 @@
 import {Client, TextChannel} from 'discord.js';
-import { getEnv } from '@helpers/env.ts';
-import { Logging } from '@helpers/logging.ts';
+import { getEnv } from '../../utils/env.ts';
+import { Logging } from '../../utils/logging.ts';
 
 export default class BumpReminderEvents {
 	private client: Client;

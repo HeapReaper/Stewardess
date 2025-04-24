@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits, ActivityType } from 'discord.js';
-import loadModules from '@helpers/moduleLoader';
-import { Logging } from '@helpers/logging';
-import { getEnv } from '@helpers/env';
+import loadModules from '../utils/moduleLoader';
+import { Logging } from '../utils/logging';
+import { getEnv } from '../utils/env';
 
 const client = new Client({
 	intents: [

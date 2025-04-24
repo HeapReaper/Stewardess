@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "paths": {
       "@enums/*": ["./enums/*"],
-      "@helpers/*": ["./helpers/*"],
+      "@utils/*": ["./utils/*"],
       "@src/*": ["./src/*"],
     },
     "module": "commonjs",
