@@ -1,7 +1,13 @@
-import { Client, Events, EmbedBuilder, TextChannel } from 'discord.js';
+import {
+	Client,
+	Events,
+	EmbedBuilder,
+	TextChannel
+} from 'discord.js';
 import { getEnv } from '@utils/env';
 import { Logging } from '@utils/logging';
 import { ColorEnum } from '@enums/ColorEnum';
+import { Github } from '@utils/github';
 
 export default class ServerLoggerEvents {
 	private client: Client;
@@ -16,9 +22,25 @@ export default class ServerLoggerEvents {
 	}
 
 	async startUpLog(): Promise<void> {
-		const embed = new EmbedBuilder()
+		const currentVersion: string|null = await Github.getCurrentRelease();
+
+		await new Promise<void>(resolve => {
+			const interval = setInterval((): void => {
+				if (this.client.ws.ping >= 0) {
+					clearInterval(interval);
+					resolve();
+				}
+			}, 500);
+		});
+
+		const embed: EmbedBuilder = new EmbedBuilder()
 			.setColor(ColorEnum.AeroBytesBlue)
-			.setTitle('Assistent is opnieuw opgestart!')
+			.setTitle('Bot herstart')
+			.setDescription(`Wie: <@${this.client.user?.id}>`)
+			.addFields(
+				{ name: 'Versie', value: `${currentVersion ? currentVersion : 'Rate limited'}` },
+				{ name: 'Ping', value: `${this.client.ws.ping}ms` },
+			)
 
 		await this.logChannel.send({embeds: [embed]});
 	}
@@ -29,10 +51,6 @@ export default class ServerLoggerEvents {
 				.setColor(ColorEnum.Red)
 				.setTitle('Bericht verwijderd!')
 				.setDescription(`Van: <@${message.author?.id}> | Kanaal: <#${message.channel.id}>.`)
-				.setAuthor({
-					name: this.client.user ? this.client.user.displayName : 'Unknown',
-					iconURL: this.client.user ? this.client.user.displayAvatarURL() : 'https://placehold.co/30x30',
-				})
 				.addFields({ name: 'Content', value: message.content ?? 'Niet gevonden...' });
 			
 			await this.logChannel.send({ embeds: [embed] });
@@ -43,10 +61,6 @@ export default class ServerLoggerEvents {
 				.setColor(ColorEnum.Orange)
 				.setTitle('Bericht aangepast!')
 				.setDescription(`Van: <@${newMessage.author?.id}> | Kanaal: <#${newMessage.channel.id}>.`)
-				.setAuthor({
-					name: this.client.user ? this.client.user.displayName : 'Unknown',
-					iconURL: this.client.user ? this.client.user.displayAvatarURL() : 'https://placehold.co/30x30',
-				})
 				.addFields(
 					{name: 'Voor', value: oldMessage.content ?? 'Niet gevonden'},
 					{name: 'Na', value: newMessage.content ?? 'Niet gevonden'}
