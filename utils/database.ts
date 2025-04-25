@@ -1,5 +1,5 @@
 import { getEnv } from '@utils/env';
-import mysql, {QueryResult} from 'mysql2';
+import mysql, { QueryResult } from 'mysql2';
 import { Connection } from 'mysql2/typings/mysql/lib/Connection';
 import { Logging } from '@utils/logging';
 
@@ -34,6 +34,7 @@ class QueryBuilder {
     private rawQuery: string = '';
 
     static init() {
+        // @ts-ignore
         QueryBuilder.connection = mysql.createConnection({
             host: <string>getEnv('DATABASE_HOST'),
             port: <string>getEnv('DATABASE_PORT'),
