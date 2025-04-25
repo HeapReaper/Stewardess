@@ -12,9 +12,17 @@ export default class ServerLoggerEvents {
 		// @ts-ignore
 		this.logChannel = this.client.channels.cache.get(getEnv('LOG') !== undefined ? getEnv('LOG') : Logging.error(('LOG env not found'))) as TextChannel;
 		this.messageLog();
-		this.startUpLog();
+		void this.startUpLog();
 	}
-	
+
+	async startUpLog(): Promise<void> {
+		const embed = new EmbedBuilder()
+			.setColor(ColorEnum.AeroBytesBlue)
+			.setTitle('Assistent is opnieuw opgestart!')
+
+		await this.logChannel.send({embeds: [embed]});
+	}
+
 	messageLog(): void {
 		this.client.on(Events.MessageDelete, async (message): Promise<void> => {
 			const embed = new EmbedBuilder()
@@ -46,18 +54,5 @@ export default class ServerLoggerEvents {
 			
 			await this.logChannel.send({ embeds: [embed] });
 		});
-	}
-
-	async startUpLog(): Promise<void> {
-		Logging.debug('Starting up log');
-		const embed = new EmbedBuilder()
-			.setColor(ColorEnum.Green)
-			.setTitle('Assistent is opnieuw opgestart!')
-			.setAuthor({
-				name: this.client.user ? this.client.user.displayName : 'Unknown',
-				iconURL: this.client.user ? this.client.user.displayAvatarURL() : 'https://placehold.co/30x30',
-			})
-
-		await this.logChannel.send({embeds: [embed]});
 	}
 }
