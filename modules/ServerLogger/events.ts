@@ -1,6 +1,6 @@
 import { Client, Events, EmbedBuilder, TextChannel } from 'discord.js';
-import { getEnv } from '../../utils/env.ts';
-import { Logging } from '../../utils/logging';
+import { getEnv } from '@utils/env';
+import { Logging } from '@utils/logging';
 import { ColorEnum } from '@enums/ColorEnum';
 
 export default class ServerLoggerEvents {
