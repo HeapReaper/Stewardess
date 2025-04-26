@@ -135,7 +135,7 @@ export default class Events {
 					Logging.info('Caching a image/video to S3');
 
 					await S3OperationBuilder
-						.setBucket('alldaybot')
+						.setBucket(<string>getEnv('S3_BUCKET_NAME'))
 						.uploadFileFromBuffer(`serverLogger/${fileName}`, buffer, {
 							'Content-Type': attachment.contentType,
 						});
