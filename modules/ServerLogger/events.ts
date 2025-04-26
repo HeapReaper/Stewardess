@@ -168,7 +168,7 @@ export default class Events {
 			Logging.debug('An message has been deleted!');
 
 			const allS3Files = await S3OperationBuilder
-				.setBucket('alldaybot')
+				.setBucket(<string>getEnv('S3_BUCKET_NAME'))
 				.listObjects();
 
 			const messageFromDbCache = await QueryBuilder
