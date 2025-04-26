@@ -11,7 +11,7 @@ export default class S3OperationBuilder {
 
         S3OperationBuilder.minioClient = new Minio.Client({
             endPoint: <string>getEnv('S3_ENDPOINT'),
-            port: <number>getEnv('S3_PORT'),
+            port: <number><unknown>getEnv('S3_PORT'),
             useSSL: false,
             accessKey: <string>getEnv('S3_ACCESS_KEY'),
             secretKey: <string>getEnv('S3_SECRET_KEY'),
