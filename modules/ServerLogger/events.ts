@@ -57,6 +57,8 @@ export default class ServerLoggerEvents {
 		});
 		
 		this.client.on(Events.MessageUpdate, async (oldMessage, newMessage): Promise<void> => {
+			if (oldMessage.content === newMessage.content) return;
+
 			const embed = new EmbedBuilder()
 				.setColor(ColorEnum.Orange)
 				.setTitle('Bericht aangepast!')
