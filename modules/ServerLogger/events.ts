@@ -200,7 +200,7 @@ export default class Events {
 
 			for (const file of filesToAttach) {
 				const url = await S3OperationBuilder
-					.setBucket('alldaybot')
+					.setBucket(<string>getEnv('S3_BUCKET_NAME'))
 					.getObjectUrl(file.name);
 
 				const response = await fetch(url);
