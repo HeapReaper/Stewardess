@@ -39,7 +39,7 @@ client.on('ready', async client => {
 
 
 	process.on('uncaughtException', async (error: Error): Promise<void> => {
-		Logging.error(`Uncaught Exception: ${err.stack ?? err}`);
+		Logging.error(`Uncaught Exception: ${error.stack ?? error}`);
 	})
 
 	process.on('unhandledRejection', async (reason: any): Promise<void> => {
