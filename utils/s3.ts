@@ -79,7 +79,6 @@ export default class S3OperationBuilder {
             const data: any[] = [];
             const stream = await S3OperationBuilder.minioClient.listObjects(this.bucketName);
 
-
             return new Promise((resolve, reject) => {
                 stream.on('data', (obj: Minio.BucketItem) => {
                     data.push(obj);

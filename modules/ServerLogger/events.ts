@@ -423,7 +423,6 @@ export default class Events {
 
 			Logging.info('A user was updated in this Discord!');
 
-
 			const memberEventEmbed = new EmbedBuilder()
 				.setColor(Color.Green)
 				.setTitle('Lid gebruikersnaam update')
