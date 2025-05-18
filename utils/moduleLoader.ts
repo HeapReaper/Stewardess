@@ -29,7 +29,7 @@ async function loadModules(client: any) {
 			const commandsModule = await import(commandsURL);
 
 			if (!commandsModule.commands) {
-				Logging.error(`Module ${moduleFolder} commands.ts does not have 'commands' export`);
+				Logging.warn(`Module ${moduleFolder} commands.ts does not have 'commands' export`);
 			} else {
 				Logging.debug(`Loaded commands for module: ${moduleFolder}`);
 				moduleLoaded = true;

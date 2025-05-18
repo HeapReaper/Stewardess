@@ -4,6 +4,7 @@ import { Logging } from '@utils/logging';
 import { getEnv } from '@utils/env';
 import { runMigrations } from '@utils/migrations.ts';
 import QueryBuilder from '@utils/database.ts';
+import * as process from "node:process";
 
 const client = new Client({
 	intents: [
@@ -35,7 +36,16 @@ client.on('ready', async client => {
 	} catch (error) {
 		Logging.error(`Error while keeping the DB active: ${error}`);
 	}
-	
+
+
+	process.on('uncaughtException', async (error: Error): Promise<void> => {
+		Logging.error(`Uncaught Exception: ${error.stack ?? error}`);
+	})
+
+	process.on('unhandledRejection', async (reason: any): Promise<void> => {
+		Logging.error(`Unhandled Rejection: ${reason instanceof Error ? reason.stack : reason}`);
+	});
+
 	client?.user.setActivity('Wilt u koffie of thee?', {type: ActivityType.Listening})
 	
 	Logging.info(`Client ready! Signed in as ${client.user.tag}!`);

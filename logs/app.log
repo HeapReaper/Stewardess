@@ -9,3 +9,168 @@
 [07-04-2025 09:26:28] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
 [07-04-2025 09:26:30] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
 [07-04-2025 09:26:57] [ERROR] Error loading events for module 'ServerLogger', AggregateError: 2 errors building "/home/aerobytes/Documents/Development/GitHub/Stewardess/modules/ServerLogger/events.ts"
+[24-04-2025 22:36:05] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 22:36:05] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 22:36:05] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 22:37:27] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 22:37:27] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 22:37:27] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 22:37:39] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 22:37:39] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 22:37:39] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 22:43:12] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 22:43:12] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 22:43:12] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 23:01:44] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 23:01:44] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 23:01:44] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 23:01:44] [ERROR] Error while running migrations: Error: ENOENT: no such file or directory, open './migrations/1745074005-create_migrations_table.sql'
+[24-04-2025 23:02:20] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 23:02:20] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 23:02:20] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 23:02:20] [ERROR] Error while running migrations: Error: ENOENT: no such file or directory, open './migrations/1745074005-create_migrations_table.sql'
+[24-04-2025 23:03:03] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 23:03:03] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 23:03:03] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 23:07:33] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 23:07:33] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 23:07:33] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[24-04-2025 23:13:36] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[24-04-2025 23:13:36] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[24-04-2025 23:13:37] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[25-04-2025 16:33:01] [ERROR] Error fetching repo in bootEvent: 404
+[25-04-2025 16:33:19] [ERROR] Error fetching repo in bootEvent: 404
+[25-04-2025 16:47:21] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[25-04-2025 16:47:21] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[25-04-2025 16:47:21] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[25-04-2025 16:47:37] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[25-04-2025 16:47:37] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[25-04-2025 16:47:37] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[25-04-2025 16:47:46] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[25-04-2025 16:47:46] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[25-04-2025 16:47:46] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[25-04-2025 16:47:51] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[25-04-2025 16:47:51] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[25-04-2025 16:47:51] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[25-04-2025 16:48:17] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[25-04-2025 16:48:17] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[25-04-2025 16:48:17] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[25-04-2025 16:48:31] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[25-04-2025 16:48:31] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[25-04-2025 16:48:31] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 21:06:11] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 21:06:11] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 21:06:11] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 21:06:38] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 21:06:38] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 21:06:38] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:17:37] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:17:37] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:17:37] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:18:02] [ERROR] Error in bootEvent serverLogger: TypeError: undefined is not an object (evaluating 'this.logChannel.send')
+[26-04-2025 22:18:13] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:18:13] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:18:13] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:18:22] [ERROR] Error in bootEvent serverLogger: TypeError: undefined is not an object (evaluating 'file.description')
+[26-04-2025 22:18:45] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:18:45] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:18:45] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:18:55] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:18:55] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:18:55] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:19:44] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:19:44] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:19:44] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:20:02] [ERROR] Error in bootEvent serverLogger: TypeError: undefined is not an object (evaluating 'this.logChannel.send')
+[26-04-2025 22:20:16] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:20:16] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:20:16] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:26:10] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:26:10] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:26:10] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:26:23] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:26:23] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:26:23] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:30:29] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:30:29] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:30:29] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:31:20] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:31:20] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:31:20] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[26-04-2025 22:33:54] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[26-04-2025 22:33:54] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[26-04-2025 22:33:54] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:52:14] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:52:14] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:52:14] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:52:57] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:52:57] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:52:57] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:53:20] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:53:20] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:53:20] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:53:37] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:53:37] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:53:37] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:53:40] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:53:40] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:53:40] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:53:48] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:53:48] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:53:48] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:53:54] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:53:54] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:53:54] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:53:59] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:53:59] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:53:59] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:54:10] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:54:10] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:54:10] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:54:12] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:54:12] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:54:12] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:54:15] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:54:15] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:54:15] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:54:40] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:54:40] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:54:40] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:55:20] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:55:20] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:55:20] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:55:21] [ERROR] test
+[18-05-2025 18:55:57] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:55:57] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:55:57] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:55:58] [ERROR] test
+[18-05-2025 18:55:59] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:55:59] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:55:59] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:55:59] [ERROR] test
+[18-05-2025 18:56:05] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:56:05] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:56:05] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:56:05] [ERROR] test
+[18-05-2025 18:56:21] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:56:21] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:56:21] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:56:21] [ERROR] test
+[18-05-2025 18:58:08] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:58:08] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:58:08] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:58:08] [ERROR] test
+[18-05-2025 18:58:31] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:58:31] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:58:32] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:58:32] [ERROR] test
+[18-05-2025 18:58:47] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:58:47] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:58:47] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:58:47] [ERROR] test
+[18-05-2025 18:59:05] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:59:05] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:59:05] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
+[18-05-2025 18:59:40] [ERROR] Module Welcome commands.ts does not have 'commands' export
+[18-05-2025 18:59:40] [ERROR] Module ServerLogger commands.ts does not have 'commands' export
+[18-05-2025 18:59:40] [ERROR] Module BumpReminder commands.ts does not have 'commands' export
