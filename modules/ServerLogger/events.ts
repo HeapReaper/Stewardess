@@ -17,7 +17,7 @@ import {
 import { Logging } from '@utils/logging.ts';
 import { getEnv } from '@utils/env.ts';
 import S3OperationBuilder from '@utils/s3';
-import QueryBuilder from '@utils/postgressqll.ts';
+import QueryBuilder from '@utils/database.ts';
 import path from 'path';
 import { Github } from '@utils/github';
 

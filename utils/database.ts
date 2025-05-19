@@ -1,7 +1,7 @@
 import { getEnv } from '@utils/env';
+import mysql, {QueryResult} from 'mysql2';
 import { Connection } from 'mysql2/typings/mysql/lib/Connection';
-import { Logging } from '@utils/logging';
-import { sql } from 'bun';
+import {Logging} from '@utils/logging';
 
 /**
  * Database abstraction.
@@ -34,10 +34,8 @@ class QueryBuilder {
     private rawQuery: string = '';
 
     static init() {
-        // @ts-ignore
         QueryBuilder.connection = mysql.createConnection({
             host: <string>getEnv('DATABASE_HOST'),
-            port: <string>getEnv('DATABASE_PORT'),
             user: <string>getEnv('DATABASE_USER'),
             password: <string>getEnv('DATABASE_PASSWORD'),
             database: <string>getEnv('DATABASE_NAME'),
