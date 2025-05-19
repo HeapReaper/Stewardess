@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import QueryBuilder from '@utils/database';
+import QueryBuilder from '@utils/postgressqll.ts';
 import { getEnv } from '@utils/env';
 import { Logging } from '@utils/logging';
 

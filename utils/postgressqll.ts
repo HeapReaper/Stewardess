@@ -1,7 +1,7 @@
 import { getEnv } from '@utils/env';
-import mysql, { QueryResult } from 'mysql2';
 import { Connection } from 'mysql2/typings/mysql/lib/Connection';
 import { Logging } from '@utils/logging';
+import { sql } from 'bun';
 
 /**
  * Database abstraction.

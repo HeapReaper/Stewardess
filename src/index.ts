@@ -3,7 +3,7 @@ import loadModules from '@utils/moduleLoader';
 import { Logging } from '@utils/logging';
 import { getEnv } from '@utils/env';
 import { runMigrations } from '@utils/migrations.ts';
-import QueryBuilder from '@utils/database.ts';
+import QueryBuilder from '@utils/postgressqll.ts';
 import * as process from "node:process";
 
 const client = new Client({

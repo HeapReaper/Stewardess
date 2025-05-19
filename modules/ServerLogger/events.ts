@@ -17,7 +17,7 @@ import {
 import { Logging } from '@utils/logging.ts';
 import { getEnv } from '@utils/env.ts';
 import S3OperationBuilder from '@utils/s3';
-import QueryBuilder from '@utils/database.ts';
+import QueryBuilder from '@utils/postgressqll.ts';
 import path from 'path';
 import { Github } from '@utils/github';
 
@@ -378,6 +378,7 @@ export default class Events {
 			const banLog = auditLogs.entries.find(
 				entry => entry.target?.id === ban.user.id)
 			;
+			// @ts-ignore
 			const executor: User|null|undefined = banLog?.executor;
 
 			const memberEventEmbed = new EmbedBuilder()
@@ -404,6 +405,7 @@ export default class Events {
 			const unBanLog = auditLogs.entries.find(
 				entry => entry.target?.id === unBan.user.id)
 			;
+			// @ts-ignore
 			const executor: User|null|undefined = unBanLog?.executor;
 
 			const memberEventEmbed = new EmbedBuilder()
