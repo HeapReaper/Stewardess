@@ -97,4 +97,8 @@ export default class S3OperationBuilder {
             return { success: false, error: error };
         }
     }
+
+    static async isOnline(): Promise<boolean> {
+
+    }
 }

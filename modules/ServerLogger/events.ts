@@ -148,6 +148,9 @@ export default class Events {
 		this.client.on(discordEvents.MessageUpdate, async (
 			oldMessage: OmitPartialGroupDMChannel<Message<boolean> | PartialMessage>,
 			newMessage: OmitPartialGroupDMChannel<Message<boolean>>): Promise<void> => {
+
+			if (newMessage.content === oldMessage.content) return
+
 			Logging.debug('An message has been edited!');
 
 			const messageUpdateEmbed: any = new EmbedBuilder()
@@ -378,6 +381,7 @@ export default class Events {
 			const banLog = auditLogs.entries.find(
 				entry => entry.target?.id === ban.user.id)
 			;
+			// @ts-ignore
 			const executor: User|null|undefined = banLog?.executor;
 
 			const memberEventEmbed = new EmbedBuilder()
@@ -404,6 +408,7 @@ export default class Events {
 			const unBanLog = auditLogs.entries.find(
 				entry => entry.target?.id === unBan.user.id)
 			;
+			// @ts-ignore
 			const executor: User|null|undefined = unBanLog?.executor;
 
 			const memberEventEmbed = new EmbedBuilder()
