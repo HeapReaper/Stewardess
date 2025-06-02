@@ -148,6 +148,9 @@ export default class Events {
 		this.client.on(discordEvents.MessageUpdate, async (
 			oldMessage: OmitPartialGroupDMChannel<Message<boolean> | PartialMessage>,
 			newMessage: OmitPartialGroupDMChannel<Message<boolean>>): Promise<void> => {
+
+			if (newMessage.content === oldMessage.content) return
+
 			Logging.debug('An message has been edited!');
 
 			const messageUpdateEmbed: any = new EmbedBuilder()
