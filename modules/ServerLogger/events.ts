@@ -20,13 +20,7 @@ import S3OperationBuilder from '@utils/s3';
 import QueryBuilder from '@utils/database.ts';
 import path from 'path';
 import { Github } from '@utils/github';
-
-enum Color {
-	Green   = 0x00FF00,
-	Orange  = 0xFFA500,
-	Red 	= 0xFF0000,
-	AeroBytesBlue    = 0x069AF3
-}
+import { Color } from '@enums/ColorEnum'
 
 export default class Events {
 	private client: Client;
@@ -93,8 +87,9 @@ export default class Events {
 	 */
 	messageEvents(): void {
 		this.client.on(discordEvents.MessageCreate, async (message: Message): Promise<void> => {
+			if (message.author.id === this.client.user?.id || message.author.bot) return;
+
 			Logging.info('Caching message');
-			if (message.author.bot) return;
 
 			try {
 				await QueryBuilder.insert('messages')
@@ -148,6 +143,8 @@ export default class Events {
 		this.client.on(discordEvents.MessageUpdate, async (
 			oldMessage: OmitPartialGroupDMChannel<Message<boolean> | PartialMessage>,
 			newMessage: OmitPartialGroupDMChannel<Message<boolean>>): Promise<void> => {
+
+			if (newMessage.author.id === this.client.user?.id || newMessage.author.bot) return;
 
 			if (newMessage.content === oldMessage.content) return
 
@@ -252,8 +249,10 @@ export default class Events {
 	 * @return void
 	 */
 	reactionEvents(): void {
-		this.client.on(discordEvents.MessageReactionAdd, async (reaction, user) => {
-			Logging.info('Reaction added to message!');
+		this.client.on('messageReactionAdd', async (reaction, user) => {
+			if (user.id === this.client.user?.id || user.bot) return;
+
+            Logging.info('Reaction added to message!');
 
 			const messageReactionAddEmbed: EmbedBuilder = new EmbedBuilder()
 				.setColor(Color.Green)
@@ -269,7 +268,7 @@ export default class Events {
 			await this.logChannel.send({ embeds: [messageReactionAddEmbed], files: [this.reactionIcon] });
 		});
 
-		this.client.on(discordEvents.MessageReactionRemove, async (reaction, user) => {
+		this.client.on('messageReactionRemove', async (reaction, user) => {
 			Logging.info('Reaction removed to message!');
 
 			const messageReactionAddEmbed: EmbedBuilder = new EmbedBuilder()
@@ -292,55 +291,69 @@ export default class Events {
 	 * @return void
 	 */
 	voiceChannelEvents(): void {
-		this.client.on(discordEvents.VoiceStateUpdate, async (oldState: VoiceState, newState: VoiceState) => {
-			// If user joins voice channel
-			if (!oldState.channel && newState.channel) {
-				const voiceChannelEmbed: EmbedBuilder = new EmbedBuilder()
-					.setColor(Color.Green)
-					.setTitle('Voice kanaal gejoined')
-					.setThumbnail('attachment://microphone.png')
-					.addFields(
-						// @ts-ignore
-						{ name: 'Gebruiker:', value: `<@${newState.user.id}>` },
-						{ name: 'Kanaal:', value: `${newState.channel.url}` },
-					);
+		this.client.on('voiceStateUpdate', async (oldState: VoiceState, newState: VoiceState) => {
+            Logging.debug(`Event VoiceStateUpdate triggered in Serverlogger/events.ts`)
 
-				await this.logChannel.send({ embeds: [voiceChannelEmbed], files: [this.voiceChatIcon] });
+			try {
+				if (!oldState.channel && newState.channel) {
+					const voiceChannelEmbed: EmbedBuilder = new EmbedBuilder()
+						.setColor(Color.Green)
+						.setTitle('Voice kanaal gejoined')
+						.setThumbnail('attachment://microphone.png')
+						.addFields(
+							// @ts-ignore
+							{ name: 'Gebruiker:', value: `<@${newState.member.user.id}>` },
+							{ name: 'Kanaal:', value: `${newState.channel.url}` },
+						);
+
+					await this.logChannel.send({ embeds: [voiceChannelEmbed], files: [this.voiceChatIcon] });
+				}
+			} catch (error) {
+				Logging.error(`Error inside logging new member in vc: ${error}`)
 			}
 
-			// If user leaves voice channel
-			if (oldState.channel && !newState.channel) {
-				Logging.info('A user leaved VC');
 
-				const voiceChannelEmbed: EmbedBuilder = new EmbedBuilder()
-					.setColor(Color.Orange)
-					.setTitle('Voice kanaal verlaten')
-					.setThumbnail('attachment://microphone.png')
-					.addFields(
-						// @ts-ignore
-						{ name: 'Gebruiker:', value: `<@${oldState.user.id}>` },
-						{ name: 'Kanaal:', value: `${oldState.channel.url}` },
-					);
+			try {
+				// If user leaves voice channel
+				if (oldState.channel && !newState.channel) {
+					Logging.info('A user leaved VC');
 
-				await this.logChannel.send({ embeds: [voiceChannelEmbed], files: [this.voiceChatIcon] });
+					const voiceChannelEmbed: EmbedBuilder = new EmbedBuilder()
+						.setColor(Color.Orange)
+						.setTitle('Voice kanaal verlaten')
+						.setThumbnail('attachment://microphone.png')
+						.addFields(
+							// @ts-ignore
+							{ name: 'Gebruiker:', value: `<@${oldState.member.user.id}>` },
+							{ name: 'Kanaal:', value: `${oldState.channel.url}` },
+						);
+
+					await this.logChannel.send({ embeds: [voiceChannelEmbed], files: [this.voiceChatIcon] });
+				}
+			} catch (error) {
+				Logging.error(`Error inside logging member leaves vc: ${error}`)
 			}
 
-			// If user changes voice channel
-			if (oldState.channel && newState.channel) {
-				Logging.info('A user changed VC');
+			try {
+				// If user changes voice channel
+				if (oldState.channel && newState.channel) {
+					Logging.info('A user changed VC');
 
-				const voiceChannelEmbed: EmbedBuilder = new EmbedBuilder()
-					.setColor(Color.Green)
-					.setTitle('Voice kanaal veranderd')
-					.setThumbnail('attachment://microphone.png')
-					.addFields(
-						// @ts-ignore
-						{ name: 'Gebruiker:', value: `<@${oldState.user.id}>` },
-						{ name: 'Oud:', value: `${oldState.channel.url}` },
-						{ name: 'Nieuw:', value: `${newState.channel.url}` },
-					);
+					const voiceChannelEmbed: EmbedBuilder = new EmbedBuilder()
+						.setColor(Color.Green)
+						.setTitle('Voice kanaal veranderd')
+						.setThumbnail('attachment://microphone.png')
+						.addFields(
+							// @ts-ignore
+							{ name: 'Gebruiker:', value: `<@${oldState.member.user.id}>` },
+							{ name: 'Oud:', value: `${oldState.channel.url}` },
+							{ name: 'Nieuw:', value: `${newState.channel.url}` },
+						);
 
-				await this.logChannel.send({ embeds: [voiceChannelEmbed], files: [this.voiceChatIcon] });
+					await this.logChannel.send({ embeds: [voiceChannelEmbed], files: [this.voiceChatIcon] });
+				}
+			} catch (error) {
+				Logging.error(`Error inside logging member changes vc: ${error}`)
 			}
 		});
 	}
@@ -353,7 +366,6 @@ export default class Events {
 	 */
 	async memberEvents(): Promise<void> {
 		// On member join is handles by invite tracker
-
 		this.client.on(discordEvents.GuildMemberRemove, async (member: GuildMember|PartialGuildMember): Promise<void> => {
 			Logging.info('A user left this Discord!');
 

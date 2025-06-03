@@ -1,4 +1,9 @@
-import { Client, GatewayIntentBits, ActivityType } from 'discord.js';
+import {
+	Client,
+	GatewayIntentBits,
+	ActivityType,
+	Partials,
+} from 'discord.js';
 import loadModules from '@utils/moduleLoader';
 import { Logging } from '@utils/logging';
 import { getEnv } from '@utils/env';
@@ -10,10 +15,17 @@ const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
 		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.DirectMessageReactions,
 		GatewayIntentBits.MessageContent,
 		GatewayIntentBits.GuildMembers,
-	]}
-);
+		GatewayIntentBits.GuildVoiceStates,
+	],
+	partials: [
+		Partials.Message,
+		Partials.Channel,
+		Partials.Reaction
+	],
+});
 
 client.on('ready', async client => {
 	try {
@@ -37,7 +49,6 @@ client.on('ready', async client => {
 		Logging.error(`Error while keeping the DB active: ${error}`);
 	}
 
-
 	process.on('uncaughtException', async (error: Error): Promise<void> => {
 		Logging.error(`Uncaught Exception: ${error.stack ?? error}`);
 	})
@@ -45,8 +56,6 @@ client.on('ready', async client => {
 	process.on('unhandledRejection', async (reason: any): Promise<void> => {
 		Logging.error(`Unhandled Rejection: ${reason instanceof Error ? reason.stack : reason}`);
 	});
-
-	client?.user.setActivity('Wilt u koffie of thee?', {type: ActivityType.Listening})
 	
 	Logging.info(`Client ready! Signed in as ${client.user.tag}!`);
 })
