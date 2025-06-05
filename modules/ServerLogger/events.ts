@@ -17,10 +17,10 @@ import {
 import { Logging } from '@utils/logging.ts';
 import { getEnv } from '@utils/env.ts';
 import S3OperationBuilder from '@utils/s3';
-import QueryBuilder from '@utils/database.ts';
 import path from 'path';
 import { Github } from '@utils/github';
 import { Color } from '@enums/ColorEnum'
+import db from '@utils/knex.ts';
 
 export default class Events {
 	private client: Client;
@@ -92,24 +92,22 @@ export default class Events {
 			Logging.info('Caching message');
 
 			try {
-				await QueryBuilder.insert('messages')
-					.values({
-						id: message.id,
-						channel_id: message.channel.id,
-						guild_id: message.guild?.id,
-						author_id: message.author.id,
-						content: message.content,
-						created_at: message.createdAt,
-						attachments: JSON.stringify(
-							message.attachments.map(attachment => ({
-								url: attachment.url,
-								name: attachment.name,
-								contentType: attachment.contentType,
-								s3Key: `serverLogger/${message.id}-${attachment.name}`,
-							})),
-						)
-					})
-					.execute();
+				await db('messages').insert({
+					id: message.id,
+					channel_id: message.channel.id,
+					guild_id: message.guild?.id,
+					author_id: message.author.id,
+					content: message.content,
+					created_at: message.createdAt,
+					attachments: JSON.stringify(
+						message.attachments.map(attachment => ({
+							url: attachment.url,
+							name: attachment.name,
+							contentType: attachment.contentType,
+							s3Key: `serverLogger/${message.id}-${attachment.name}`,
+						})),
+					)
+				})
 			} catch (error) {
 				Logging.error(`Error while trying to cache message inside server logger: ${error}`);
 			}
@@ -171,8 +169,7 @@ export default class Events {
 				.setBucket(<string>getEnv('S3_BUCKET_NAME'))
 				.listObjects();
 
-			const messageFromDbCache = await QueryBuilder
-				.select('messages')
+			const messageFromDbCache = await db('messages')
 				.where({id: message.id})
 				.first();
 
