@@ -21,6 +21,7 @@ import path from 'path';
 import { Github } from '@utils/github';
 import { Color } from '@enums/ColorEnum'
 import db from '@utils/knex.ts';
+import {Faker} from "@utils/faker.ts";
 
 export default class Events {
 	private client: Client;
@@ -372,7 +373,7 @@ export default class Events {
 				.setThumbnail('attachment://user.png')
 				.addFields(
 					{ name: 'Gebruiker:', value: `<@${member.id}>` },
-					{ name: 'Lid sinds:', value: `<t:${Math.floor(member.joinedTimestamp ?? 0 / 1000)}:F>` },
+					{ name: 'Lid sinds:', value: `${(member.joinedAt?.toLocaleString('nl-NL')) }` },
 				);
 
 			await this.logChannel.send({ embeds: [memberEventEmbed], files: [this.userIcon] });

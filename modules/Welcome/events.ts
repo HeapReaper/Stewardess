@@ -19,7 +19,7 @@ export default class WelcomeEvents {
 	
 	constructor(client: Client) {
 		this.client = client;
-		this.sendWelcomeMessage();
+		void this.sendWelcomeMessage();
 	}
 	
 	async sendWelcomeMessage(): Promise<void> {
