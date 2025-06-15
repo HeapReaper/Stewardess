@@ -7,7 +7,6 @@ import {
 } from 'discord.js';
 import { getEnv } from '@utils/env';
 import { Logging } from '@utils/logging';
-import { Faker } from '@utils/faker';
 
 export default class Events {
     private client: Client;
@@ -40,7 +39,6 @@ export default class Events {
         this.client = client;
         void this.sendWelcomeMessage();
         void this.sendLeaveMessage();
-        Faker.memberRemove('632677231113666601', this.client)
     }
 
     async sendWelcomeMessage(): Promise<void> {
